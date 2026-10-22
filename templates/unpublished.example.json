@@ -1,0 +1,33 @@
+{
+  "work_name": "待填作品名称",
+  "author": "待填作者",
+  "copyright_owner": "待填著作权人",
+  "publication_status": "unpublished",
+  "publication_url": "",
+  "items": [
+    {
+      "section": 1,
+      "title": "1. 原创摄影图（插画内容来源）",
+      "caption": "待填本件摄影与插画的关系",
+      "image": "待填原创摄影绝对路径"
+    },
+    {
+      "section": 2,
+      "title": "2. AI Skill开发过程",
+      "caption": "待填有记录支持且本件适用的研发贡献",
+      "image": "待填工具开发证据绝对路径"
+    },
+    {
+      "section": 3,
+      "title": "3. 插画制作过程",
+      "caption": "待填本件实际调用、调整或审核过程",
+      "image": "待填本件过程证据绝对路径"
+    },
+    {
+      "section": 4,
+      "title": "4. 发表状态说明",
+      "caption": "截至待填日期，本作品尚未公开发表。",
+      "image": null
+    }
+  ]
+}
