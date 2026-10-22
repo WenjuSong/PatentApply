@@ -1,0 +1,4 @@
+interface:
+  display_name: "北京美术作品版权申请"
+  short_description: "复用已确认模板与证据，准备原创摄影衍生插画材料并按授权办理北京登记申请"
+  default_prompt: "使用 $beijing-art-copyright，复用项目已确认模板，准备本件插画登记材料，核验后按授权范围办理，在约定审核点停下。"

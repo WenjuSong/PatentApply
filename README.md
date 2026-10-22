@@ -1,40 +1,39 @@
 # PatentApply｜美术作品登记材料工程
 
-北京原创摄影衍生插画的登记材料工具与工作约定。此仓库保存通用代码和模板；真实申请材料在本地管理。模板不保证登记通过。
+北京原创摄影衍生插画的材料模板、生成工具和办理约定。复用已确认内容，只改本件必要事实；文字简洁，证据完整。模板不保证登记通过。
 
-## 快速使用
+## 新作品最短路线
 
-Python依赖为 `requirements.txt` 中的Pillow、reportlab和pypdf。在独立环境安装依赖后：
+1. 读 [项目规则](AGENTS.md)，复制 [信息卡](docs/新作品信息卡.md) 到本地 `cases/<作品名称>/`。已有身份、研发与授权事实可沿用，只补缺项。
+2. 以 [三栏文字模板](templates/作品说明书.md) 为起点；固定段落不重写，本件画面一至两句、真实调整一句，交作者确认。
+3. 复制 [已发表配置](templates/published.example.json) 或 [未发表配置](templates/unpublished.example.json) 到本地。填写本件事实和证据路径，第二部分保留九张共用研发图，每图一句；单件过程图数量据实变化，总页数不固定。
+4. 生成并核验文件，在当前授权内办理。各审核点、本人打印及签字交接见AGENTS；不能因生成或上传成功就标为已提交。
 
-1. 将 `templates/published.example.json` 或 `templates/unpublished.example.json` 复制到本地未跟踪目录。
-2. 填写本件事实与图片路径；可按证据数量增减同一部分的页面，保持1至4部分顺序。未发表配置第四部分为纯文字说明。
-3. 运行：
+## PDF生成
+
+复用已安装的Python环境，依赖见 `requirements.txt`：
 
 ```sh
 python3 版权准备/补充材料PDF模板-北京-v2-20261022/build_pdf.py \
   本地配置.json 本地新输出目录
 ```
 
-默认中文字体为macOS Arial Unicode；其他系统用 `--font /path/to/chinese.ttf` 指定已安装中文字体。输出文件名与作品名称一致。生成器拒绝待填项、发表信息冲突与同名PDF覆盖；生成后还需目视检查排版和证据可读性，不自动上传或提交。
+配置中的相对图片路径以配置所在目录解析。默认中文字体为macOS Arial Unicode；其他系统使用 `--font /path/to/chinese.ttf`。生成器拒绝待填项、发表冲突、缺图及覆盖已有PDF；生成后检查渲染、证据可读性、页数和大小。九图是本项目复用约定，不是所有北京申请的官方固定要求。
 
-## 工程文档
+作品PNG转JPG使用 [prepare_work.py](skills/beijing-art-copyright/scripts/prepare_work.py)，先读 `--help`；原画不覆盖，必要标注放画外。
+
+## 文档与Skill
 
 | 入口 | 用途 |
 |---|---|
-| [AGENTS.md](AGENTS.md) | 项目长期规则与逐页协作边界 |
-| [项目维护说明](docs/项目维护说明.md) | 文档分层与维护来源 |
-| [新作品信息卡](docs/新作品信息卡.md) | 每件必要差异和确认记录 |
-| [仓库管理说明](docs/仓库管理说明.md) | 跟踪范围、提交检查及本地文件保护 |
+| [AGENTS.md](AGENTS.md) | 长期规则、授权边界和审核停点 |
+| [项目维护说明](docs/项目维护说明.md) | 唯一维护来源、历史冻结与发布方法 |
+| [Skill](skills/beijing-art-copyright/SKILL.md) | 按需加载的办理流程 |
+| [问题与解法](skills/beijing-art-copyright/references/lessons.md) | 返工经验及对应核验办法 |
+| [仓库管理说明](docs/仓库管理说明.md) | 精确白名单与公开检查 |
 
-## 本机业务入口（不上传GitHub）
+本机业务入口为 `docs/模板与资料索引.md`、`docs/申请台账.md`、`cases/<作品名称>/README.md`；这些仅本地保留，克隆仓库不会带来个人材料。
 
-以下链接只在原工作目录及已有材料环境有效：
+Skill正式维护源是本机 `~/.codex/skills/beijing-art-copyright/`；仓库 `skills/` 为脚本导出的发布副本，不手工双线编辑。调用示例：`使用 $beijing-art-copyright，为《作品名称》准备北京美术作品登记材料，复用当前项目模板，先核对本件缺项。`
 
-- [已确认模板与资料索引](docs/模板与资料索引.md)
-- [申请台账](docs/申请台账.md)
-- [小鹿已提交档案](cases/好事在鹿上原创插画/README.md)
-- [个人Skill](/Users/pony/.codex/skills/beijing-art-copyright/SKILL.md)
-
-可在原工作环境调用：`使用 $beijing-art-copyright，为《作品名称》准备北京美术作品登记材料，复用本项目模板。先核对本件缺项，暂不提交。`
-
-原图、成品图、PDF、个人证件、签字件、会话/OCR、台账和生成输出均留本地，Git不跟踪也不删除。当前 `.gitignore` 默认忽略新文件，扩展公开范围需先检查内容。
+原图、成品图、PDF、OCR、会话记录、身份与签字、申请台账、回执、真实配置和校验产物均不入库；排除Git不会删除本地文件。

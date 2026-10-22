@@ -11,12 +11,34 @@
 !/docs/仓库管理说明.md
 !/templates/
 /templates/*
-!/templates/*.json
+!/templates/published.example.json
+!/templates/unpublished.example.json
+!/templates/作品说明书.md
 !/版权准备/
 /版权准备/*
 !/版权准备/补充材料PDF模板-北京-v2-20261022/
 /版权准备/补充材料PDF模板-北京-v2-20261022/*
 !/版权准备/补充材料PDF模板-北京-v2-20261022/build_pdf.py
+
+!/scripts/
+/scripts/*
+!/scripts/export_skill.py
+!/skills/
+/skills/*
+!/skills/beijing-art-copyright/
+/skills/beijing-art-copyright/*
+!/skills/beijing-art-copyright/SKILL.md
+!/skills/beijing-art-copyright/agents/
+/skills/beijing-art-copyright/agents/*
+!/skills/beijing-art-copyright/agents/openai.yaml
+!/skills/beijing-art-copyright/references/
+/skills/beijing-art-copyright/references/*
+!/skills/beijing-art-copyright/references/materials.md
+!/skills/beijing-art-copyright/references/browser.md
+!/skills/beijing-art-copyright/references/lessons.md
+!/skills/beijing-art-copyright/scripts/
+/skills/beijing-art-copyright/scripts/*
+!/skills/beijing-art-copyright/scripts/prepare_work.py
 
 # 无论所在目录，素材、交付物、凭据与缓存均不入库。
 *.[pP][nN][gG]
